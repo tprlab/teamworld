@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD//EN"  
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+
+<filter-def name="noDiv"/>
+
+   <class name="com.leaguetor.entity.Counting" table="counting">
+      <id name="id" type="int" column="id"/>
+
+
+     <property name="name" column="name" type="string"/>
+     <property name="win" column="wins" type="int"/>
+     <property name="wot" column="wot" type="int"/>
+     <property name="lot" column="lot" type="int"/>
+     <property name="loss" column="loss" type="int"/>
+     <property name="tie" column="tie" type="int"/>
+     <property name="otAllowed" column="otAllowed" type="boolean"/>
+     <property name="tieAllowed" column="tieAllowed" type="boolean"/>
+     <property name="resultOnly" column="resultOnly" type="boolean"/>
+   </class>
+
+
+   <class name="com.leaguetor.entity.Sport" table="sport">
+      <id name="id" type="int" column="id"/>
+
+     <property name="name" column="name" type="string"/>
+     <property name="popul" column="popul" type="int"/>
+     <property name="fieldType" column="ftype" type="int"/>
+
+     <bag name="countings" inverse="true" lazy="false" table="sport_counting">
+         <key column="sport"/>
+         <many-to-many class="com.leaguetor.entity.Counting" column="counting"/>
+     </bag>
+   </class>
+
+
+
+
+
+   <class name="com.leaguetor.entity.LeagueInfo" table="league">
+      <id name="id" type="int" column="id">
+         <generator class="native">
+            <param name="sequence">league_seq</param>
+         </generator>
+      </id>
+        <property name="name" column="name" type="string"/>
+        <property name="uname" column="uname" type="string"/>
+        <property name="location" column="location" type="string"/>
+        <property name="owner" column="owner" type="int"/>
+        <property name="ownername" column="ownername" type="string"/>
+        <property name="created" column="created" type="long"/>
+        <property name="status" column="status" type="int"/>
+        <many-to-one name="sport" class="com.leaguetor.entity.Sport" column="sport" lazy="false"/>
+   </class>
+
+   <class name="com.leaguetor.entity.Team" table="team">
+      <id name="id" type="int" column="id">
+         <generator class="native">
+            <param name="sequence">team_seq</param>
+         </generator>
+       </id>
+        <property name="name" column="name" type="string"/>
+        <property name="uname" column="uname" type="string"/>
+        <property name="leagueId" column="league" type="int"/>
+        <property name="created" column="created" type="long"/>
+        <property name="divId" column="div_id" type="int"/>
+   </class>
+
+   <class name="com.leaguetor.entity.DivInfo" table="division">
+      <id name="id" type="int" column="id">
+         <generator class="native">
+            <param name="sequence">div_seq</param>
+         </generator>
+      </id>
+        <property name="name" column="name" type="string"/>
+        <property name="uname" column="uname" type="string"/>
+        <property name="leagueId" column="league" type="int"/>
+        <property name="created" column="created" type="long"/>
+        <property name="rank" column="rank" type="int"/>
+   </class>
+
+
+   <class name="com.leaguetor.entity.TourInfo" table="tour">
+      <id name="id" type="int" column="id">
+         <generator class="native">
+            <param name="sequence">tour_seq</param>
+         </generator>
+      </id>
+        <property name="name" column="name" type="string"/>
+        <property name="uname" column="uname" type="string"/>
+        <property name="leagueId" column="league" type="int"/>
+        <property name="created" column="created" type="long"/>
+        <property name="started" column="started" type="long"/>
+        <property name="finished" column="finished" type="long"/>
+        <property name="status" column="status" type="int"/>
+        <property name="stage" column="stage" type="int"/>
+   </class>
+
+   <class name="com.leaguetor.entity.Game" table="game">
+      <id name="id" type="int" column="id">
+         <generator class="native">
+            <param name="sequence">game_seq</param>
+         </generator>
+      </id>
+
+        <property name="leagueId" column="league" type="int" update="false"/>
+        <property name="tourId" column="tour" type="int" update="false"/>
+        <property name="divId" column="division" type="int" update="false"/>
+        <property name="score1" column="score1" type="int"/>
+        <property name="score2" column="score2" type="int"/>
+        <property name="details" column="details" type="string"/>
+        <property name="status" column="status" type="int"/>
+        <property name="scheduled" column="scheduled" type="long"/>
+        <property name="stage" column="stage" type="int" update="false"/>
+        <property name="court" column="court" type="int"/>
+
+        <many-to-one name="team1" class="com.leaguetor.entity.Team" lazy="false" fetch="join"  insert="true"  update="false" >
+            <column name="team1" not-null="true" />
+        </many-to-one>
+
+        <many-to-one name="team2" class="com.leaguetor.entity.Team" lazy="false" fetch="join" insert="true" update="false" >
+            <column name="team2" not-null="true" />
+        </many-to-one>
+   </class>
+
+   <class name="com.leaguetor.entity.TableRecord" table="team_record">
+        <composite-id>
+            <key-property name="teamId" column="team" type="int"/>
+            <key-property name="tourId" column="tour" type="int"/>
+        </composite-id>
+
+        <property name="leagueId" column="league" type="int" update="false"/>
+        <property name="divId" column="div_id" type="int"/>
+        <property name="points" column="points" type="int"/>
+        <property name="games" column="games" type="int"/>
+        <property name="wins" column="wins" type="int"/>
+        <property name="losses" column="losses" type="int"/>
+        <property name="wot" column="wot" type="int"/>
+        <property name="lot" column="lot" type="int"/>
+        <property name="ties" column="ties" type="int"/>
+        <property name="gf" column="goal_for" type="int"/>
+        <property name="ga" column="goal_against" type="int"/>
+        <property name="gdiff" column="goal_diff" type="int"/>
+        <property name="place" column="place" type="int"/>
+        <property name="version" column="version" type="int"/>
+
+        <many-to-one name="team" class="com.leaguetor.entity.Team" lazy="false" fetch="join"  insert="false"  update="false" >
+            <column name="team" not-null="true" />
+        </many-to-one>
+   </class>
+
+
+
+   <class name="com.leaguetor.entity.Division" table="division">
+        <id name="id" type="int" column="id"/>
+        <property name="name" column="name" type="string"/>
+        <property name="uname" column="uname" type="string"/>
+        <property name="leagueId" column="league" type="int"/>
+        <property name="created" column="created" type="long"/>
+        <property name="rank" column="rank" type="int"/>
+        <bag name="teams" inverse="true" lazy="false" order-by="id asc">
+            <key column="div_id"/>
+            <one-to-many class="com.leaguetor.entity.Team"/>
+        </bag>
+   </class>
+
+   <class name="com.leaguetor.entity.Tour" table="tour">
+        <id name="id" type="int" column="id"/>
+        <property name="name" column="name" type="string"/>
+        <property name="uname" column="uname" type="string"/>
+        <property name="leagueId" column="league" type="int"/>
+        <property name="created" column="created" type="long"/>
+        <property name="started" column="started" type="long"/>
+        <property name="finished" column="finished" type="long"/>
+        <property name="status" column="status" type="int"/>
+        <property name="stage" column="stage" type="int"/>
+        <many-to-one name="league" class="com.leaguetor.entity.LeagueInfo" column="league" lazy="false" update="false" insert="false"/>
+   </class>
+
+
+
+   <class name="com.leaguetor.entity.League" table="league">
+       <id name="id" type="int" column="id"/>
+        <property name="name" column="name" type="string"/>
+        <property name="uname" column="uname" type="string"/>
+        <property name="location" column="location" type="string"/>
+        <property name="owner" column="owner" type="int"/>
+        <property name="ownername" column="ownername" type="string"/>
+        <property name="created" column="created" type="long"/>
+        <many-to-one name="sport" class="com.leaguetor.entity.Sport" column="sport" lazy="false"/>
+        <bag name="teams" inverse="true" lazy="false" order-by="id asc">
+            <key column="league"/>
+            <one-to-many class="com.leaguetor.entity.Team"/>
+            <filter name="noDiv" condition="div_id = 0"/>
+        </bag>
+        <bag name="divList" inverse="true" lazy="false" order-by="rank">
+            <key column="league"/>
+            <one-to-many class="com.leaguetor.entity.Division"/>
+        </bag>
+
+   </class>
+
+   <class name="com.leaguetor.acl.Perm" table="uperm">
+        <composite-id>
+            <key-property name="user" column="usr" type="string"/>
+            <key-property name="oid" column="oid" type="int"/>
+            <key-property name="type" column="otype" type="string"/>
+        </composite-id>
+
+        <property name="perm" column="perms" type="int"/>
+        <property name="scope" column="oscope" type="int"/>
+   </class>
+
+   <class name="com.leaguetor.acl.User" table="usr">
+      <id name="id" type="int" column="id">
+         <generator class="native">
+            <param name="sequence">user_seq</param>
+         </generator>
+
+      </id>
+
+     <property name="name" column="name" type="string"/>
+     <property name="email" column="email" type="string"/>
+     <property name="regged" column="regged" type="long"/>
+   </class>
+
+   <class name="com.leaguetor.acl.Role" table="user_roles">
+      <id name="id" type="int" column="id">
+         <generator class="native">
+            <param name="sequence">role_seq</param>
+         </generator>
+      </id>
+
+     <property name="usr" column="usr" type="string"/>
+     <property name="role" column="role" type="string"/>
+   </class>
+
+
+   <class name="com.leaguetor.entity.Fan" table="fan">
+        <composite-id>
+            <key-property name="usr" column="usr" type="int"/>
+            <key-property name="subj" column="subj" type="int"/>
+            <key-property name="type" column="ftype" type="int"/>
+        </composite-id>
+   </class>
+
+   <class name="com.leaguetor.entity.Player" table="usr">
+      <id name="id" type="int" column="id"/>
+     <property name="name" column="name" type="string"/>
+   </class>
+
+
+
+</hibernate-mapping>

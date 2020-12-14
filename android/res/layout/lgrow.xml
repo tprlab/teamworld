@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/row"
+        android:clickable="true"
+        android:onClick="onManageLeague"
+    >
+
+    <TextView android:id="@+id/name"
+        style="@style/row"
+        android:clickable="true"
+        android:onClick="onManageLeague"
+        android:textSize="18dp"
+    />
+
+</TableRow>

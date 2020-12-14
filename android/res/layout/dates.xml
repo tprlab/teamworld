@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:orientation="vertical"
+    android:id="@+id/dates_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <TableLayout android:id="@+id/game_table" android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        >
+
+    <TableRow layout_marginLeft="10dp">
+       <TextView
+            style="@style/left_row"
+           android:id="@+id/unsch_games"
+           />
+
+        <Button
+            style="@style/button"
+            android:id="@+id/reset_dates"
+            android:text="@string/reset_dates"
+            android:layout_height="50dp"
+            android:layout_width="150dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:onClick="onReset"
+            />
+    </TableRow>
+
+
+    <TableRow layout_marginLeft="10dp">
+       <TextView
+            style="@style/left_row"
+           android:text="@string/day_of_week"
+           />
+
+        <Button
+            style="@style/bspinner"
+            android:id="@+id/day_week"
+            android:text="@string/select_day"
+            android:layout_height="50dp"
+            android:layout_width="150dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:onClick="onDay"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_day_week"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            />
+
+
+
+    </TableRow>
+
+    <TableRow layout_marginLeft="10dp">
+
+       <TextView
+            style="@style/left_row"
+           android:text="@string/starting"
+           />
+
+        <TextView
+            android:id="@+id/start_date"
+            style="@style/fedit"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/arrow_down_float"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"/>
+
+
+
+    </TableRow>
+
+    <TableRow layout_marginLeft="10dp">
+
+       <TextView
+        style="@style/left_row"
+           android:text="@string/start_time"
+           />
+
+        <TextView
+            android:id="@+id/start_time"
+            style="@style/fedit"
+            android:layout_width="150dp"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/arrow_down_float"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"/>
+
+
+    </TableRow>
+
+    <TableRow layout_marginLeft="10dp">
+
+       <TextView
+        style="@style/left_row"
+           android:text="@string/end_time"
+           />
+
+        <TextView
+            android:id="@+id/end_time"
+            style="@style/fedit"
+            android:layout_width="150dp"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/arrow_down_float"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"/>
+    </TableRow>
+
+
+    <TableRow layout_marginLeft="10dp">
+       <TextView
+            style="@style/left_row"
+           android:text="@string/game_length"
+
+           />
+
+        <EditText
+            android:id="@+id/game_length"
+            style="@style/fedit"
+            android:inputType="number"
+            android:layout_width="150dp"
+            android:hint="@string/game_length_hint"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            />
+    </TableRow>
+
+    <TableRow layout_marginLeft="10dp">
+       <TextView
+            style="@style/left_row"
+           android:text="@string/court_num"
+
+           />
+
+        <EditText
+            android:id="@+id/court_num"
+            style="@style/fedit"
+            android:inputType="number"
+            android:layout_width="150dp"
+            android:hint="@string/court_num_hint"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            />
+    </TableRow>
+
+
+
+    </TableLayout>
+
+    <Button android:id="@+id/save"
+        android:layout_width="200dp" android:layout_height="50dp"
+        android:text="@string/save"
+        style="@style/button"
+        android:onClick="onSaveDates"
+        android:layout_margin="10dp"
+        />
+</LinearLayout>
+
+</ScrollView>

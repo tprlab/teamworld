@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    >
+
+
+    <TextView
+        style="@style/header"
+        android:id="@+id/leagues_txt"
+        android:clickable="true"
+        android:onClick="onLeagues"
+       />
+
+
+    <TableLayout android:id="@+id/lg_table" android:layout_width="fill_parent" android:layout_height="wrap_content" >
+    </TableLayout>
+
+    <ImageButton
+        style="@style/picbtn"
+        android:id="@+id/more_lgs"
+        android:background="@drawable/arrow_down_float"
+       />
+
+
+
+    <Button android:id="@+id/lg_create"
+        android:text="@string/create"
+        android:onClick="onCreateLeague"
+        style="@style/button"
+        />
+
+</LinearLayout>

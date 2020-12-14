@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+
+    <ListView
+        android:id="@+id/lgames"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:divider="@color/gray"
+        android:dividerHeight="1dp">
+    </ListView>
+
+
+   <Button
+        style="@style/button"
+        android:id="@+id/btnSch"
+        android:text="@string/schedule"
+        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        />
+
+
+</LinearLayout>
+

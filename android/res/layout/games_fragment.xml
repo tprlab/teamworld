@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+       style="@style/header"
+        android:id="@+id/games_txt"
+       android:clickable="true"
+           android:onClick="onGames"
+       />
+
+    <ImageButton
+        style="@style/picbtn"
+        android:id="@+id/less_games"
+        android:background="@drawable/arrow_up_float"
+       />
+
+
+    
+    <TableLayout android:id="@+id/game_table" android:layout_width="fill_parent" android:layout_height="wrap_content" >
+    </TableLayout>
+
+    <ImageButton
+        style="@style/picbtn"
+        android:id="@+id/more_games"
+        android:background="@drawable/arrow_down_float"
+       />
+</LinearLayout>

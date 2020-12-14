@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:stretchColumns="2"
+    android:layout_margin="1dp"
+        android:clickable="true"
+        style="@style/row">
+
+
+    <TextView
+        style="@style/wrow"
+        android:id="@+id/gameidx"
+        android:textStyle="italic"
+        android:textColor="@color/darkgray"
+        />
+
+
+    <TextView
+        android:id="@+id/gamedesc"
+        android:layout_weight="1"
+        style="@style/wrow"
+        />
+
+    <TextView
+        android:id="@+id/gamediv"
+        style="@style/wrow"
+        textStyle="italic"
+        />
+
+
+    <TextView
+        android:id="@+id/gamedate"
+        style="@style/wrow"
+        textStyle="italic"
+        />
+
+
+    <TextView
+        style="@style/wrow"
+        android:id="@+id/score"
+        android:textStyle="bold"
+        android:layout_gravity="right"
+        />
+</TableRow>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:id="@+id/profile"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <TableLayout 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content" >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+            <TextView
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:textStyle="bold"
+               android:textSize="20.0sp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:id="@+id/leagues"
+                android:text="@string/leagues"
+               />
+
+            <Button android:id="@+id/create"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="+"
+                android:onClick="onCreateLeague"
+                android:textSize="10.0sp"
+                />
+        </TableRow>
+    </TableLayout>
+
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:id="@+id/lgtable"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content" >
+ 
+    </TableLayout>
+
+
+
+</LinearLayout>
+
+</ScrollView>

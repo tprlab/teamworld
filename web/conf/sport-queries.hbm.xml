@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD//EN"  
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+
+    <query name="clearTable">
+        DELETE FROM TableRecord where tourId = :tour AND divId = :dv
+    </query>
+
+    <query name="clearSchedule">
+        DELETE FROM Game where tourId = :tour AND divId = :dv AND status = 0
+    </query>
+
+
+    <query name="clearScheduleAll">
+        DELETE FROM Game where tourId = :tour AND status = 0
+    </query>
+
+
+    <query name="getPlayOffHistory">
+        FROM Game WHERE tourId = :tour AND divId = :dv AND stage &lt; 0 ORDER BY stage
+    </query>
+
+    <query name="getDivTable">
+        FROM TableRecord WHERE tourId =:tourId AND divId = :divId ORDER by points DESC, gdiff DESC, gf DESC
+    </query>
+
+    <query name="getTourTable">
+        FROM TableRecord WHERE tourId =:tourId ORDER by points DESC, gdiff DESC, gf DESC
+    </query>
+
+    <query name="loadGamesAsc">
+        FROM Game WHERE tourId =:tr ORDER by scheduled ASC, id ASC
+    </query>
+
+    <query name="loadGamesDesc">
+        FROM Game WHERE tourId =:tr ORDER by scheduled DESC, id DESC
+    </query>
+
+    <query name="loadDivGamesAsc">
+        FROM Game WHERE tourId =:tourId AND divId = :divId ORDER by scheduled ASC, id ASC
+    </query>
+
+    <query name="loadDivGamesDesc">
+        FROM Game WHERE tourId =:tourId AND divId = :divId ORDER by scheduled DESC, id DESC
+    </query>
+
+    <query name="getTeamGames">
+        FROM Game WHERE tourId =:tour AND (team1.id = :team OR team2.id = :team) ORDER BY scheduled ASC, id ASC
+    </query>
+
+    <query name="getLeaguesGames">
+        FROM Game WHERE leagueId in (:ids) ORDER BY scheduled ASC, id ASC
+    </query>
+
+    <query name="getLeaguesTours">
+        FROM TourInfo WHERE leagueId in (:ids) ORDER BY id ASC
+    </query>
+
+    <query name="getFan">
+        FROM Fan WHERE usr = :usr AND type = :ftype AND subj = :subj ORDER BY id
+    </query>
+
+    <query name="getFanLeagues">
+        FROM LeagueInfo WHERE id in (SELECT subj FROM Fan WHERE (type = 0  AND usr = :usr)) ORDER BY id
+    </query>
+
+
+    <query name="getFans">
+        FROM Player WHERE id in (SELECT usr FROM Fan WHERE (type = :ftype  AND subj = :subj)) ORDER BY id
+    </query>
+
+
+
+
+
+    <sql-query name="getPlayOffStage">
+        <return-scalar column="c" type="int"/>
+        SELECT MAX(stage) AS c FROM game WHERE stage &lt; 0 AND tour = :tour AND division = :dv
+    </sql-query>
+
+    <sql-query name="getPlayOffFirstStage">
+        <return-scalar column="c" type="int"/>
+        SELECT MIN(stage) AS c FROM game WHERE stage &lt; 0 AND tour = :tour AND division = :dv
+    </sql-query>
+
+    <sql-query name="countDivGames">
+        <return-scalar column="c" type="int"/>
+        SELECT COUNT(id) AS c FROM game WHERE division = :dv
+    </sql-query>
+
+    <sql-query name="getTourDivs">
+        <return-scalar column="div_id" type="int"/>
+        SELECT DISTINCT div_id FROM team_record WHERE tour = :tour ORDER by div_id
+    </sql-query>
+
+    <sql-query name="countTeamGames">
+        <return-scalar column="c" type="int"/>
+        SELECT COUNT(id) AS c FROM game WHERE team1 = :team OR team2 = :team
+    </sql-query>
+
+    <sql-query name="countTeamTours">
+        <return-scalar column="c" type="int"/>
+        SELECT COUNT(team) AS c FROM team_record WHERE team = :team
+    </sql-query>
+
+    <sql-query name="countDivTeams">
+        <return-scalar column="c" type="int"/>
+        SELECT COUNT(div_id) AS c FROM team WHERE div_id = :dv
+    </sql-query>
+
+    <sql-query name="countDivTours">
+        <return-scalar column="c" type="int"/>
+        SELECT COUNT(div_id) AS c FROM team_record WHERE div_id = :dv
+    </sql-query>
+
+
+    <sql-query name="getDivRank">
+        <return-scalar column="c" type="int"/>
+        SELECT MAX(rank) AS c FROM division WHERE league = :league
+    </sql-query>
+
+    <sql-query name="resetDates">
+        UPDATE game SET scheduled = 0 where tour =:tour
+    </sql-query>
+
+    <sql-query name="resetDivDates">
+        UPDATE game SET scheduled = 0 where tour =:tour AND division = :divId
+    </sql-query>
+
+    <sql-query name="getTeamPerms">
+        <return-scalar column="oid" type="int"/>
+        <return-scalar column="perms" type="int"/>
+        SELECT oid, perms FROM uperm WHERE oscope = :scope AND usr = :usr
+    </sql-query>
+
+    <sql-query name="getPermTeams">
+        <return-scalar column="oid" type="int"/>
+        SELECT oid FROM uperm WHERE usr = :usr AND perms &gt; 0 AND otype='team'
+    </sql-query>
+
+
+
+
+</hibernate-mapping>

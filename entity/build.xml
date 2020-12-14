@@ -1,0 +1,35 @@
+<project name="pdas_test" default="build" basedir=".">
+
+<path id="main_path">
+    <pathelement path="."/>
+    <pathelement path="classes"/>
+    <fileset dir="../lib">
+        <include name="*.jar"/>
+    </fileset>
+
+    <fileset dir="lib">
+        <include name="*.jar"/>
+    </fileset>
+
+</path>
+
+<target name="gen">
+
+    <exec executable="thrift">
+        <arg value="--gen"/>
+        <arg value="java"/>
+        <arg value="Leaguetor.thrift"/>
+    </exec>
+</target>
+
+
+<target name="build" depends="gen">
+    <mkdir dir="classes"/>
+    <javac srcdir="gen-java"  destdir="classes" debug="on">
+        <classpath refid="main_path"/>
+    </javac>
+    <jar basedir="classes" jarfile="sport-entity.jar" />
+</target>
+
+
+</project>

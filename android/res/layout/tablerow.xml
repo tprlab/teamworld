@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    style="@style/trow"
+    android:layout_margin="0dp"
+    >
+
+    <TextView
+        android:id="@+id/place"
+        style="@style/trow"
+        />
+
+    <TextView
+        android:id="@+id/team"
+        style="@style/trow"
+        android:paddingRight="20dp"
+        />
+
+    <TextView
+        android:id="@+id/games"
+        style="@style/trow" 
+        />
+
+
+    <TextView
+        android:id="@+id/points"
+        style="@style/trow"
+        />
+
+    <TextView
+        android:id="@+id/wins"
+        style="@style/trow"
+        />
+
+    <TextView
+        android:id="@+id/ties"
+        style="@style/trow"
+        />
+
+    <TextView
+        android:id="@+id/losses"
+        style="@style/trow"
+        />
+
+</TableRow>

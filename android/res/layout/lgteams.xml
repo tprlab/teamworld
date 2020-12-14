@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:id="@+id/profile"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <fragment
+        android:id="@+id/trs_fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        class="com.esportplace.android.ToursFragmentX" />
+
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+        android:id="@+id/team_hdr"
+        style="@style/header"
+        android:text="@string/teams"
+        android:onClick="onCreateTeam"
+        android:layout_gravity="left"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:padding="0dp"
+        android:layout_margin="0dp"
+        android:drawableLeft="@drawable/plus"
+        />
+
+
+    <TextView
+        android:id="@+id/div_hdr"
+        style="@style/header"
+        android:text="@string/divs"
+        android:clickable="true"
+        android:onClick="onCreateDiv"
+        android:layout_gravity="right"
+        android:layout_weight="1"
+        android:padding="0dp"
+        android:layout_margin="0dp"
+        android:drawableRight="@drawable/plus"
+        />
+
+
+</LinearLayout>
+
+
+   <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+       android:orientation="horizontal"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/create_bar"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+
+       >
+
+
+         <EditText android:id="@+id/newname" style="@style/left_edit" 
+                android:layout_alignParentLeft = "true"
+                android:layout_toLeftOf="@+id/confCreate"
+                android:layout_centerVertical="true"
+                android:layout_margin="0dp"
+                />
+         <Button android:id="@+id/confCreate"
+             android:layout_width="wrap_content" android:layout_height="50dp"
+             style="rbutton"
+             android:onClick="onCreateConfirmed"
+            android:drawableLeft="@drawable/btn_check_buttonless_off"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight = "true"
+                android:layout_margin="0dp"
+             />
+    </RelativeLayout>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+    <HorizontalScrollView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:id="@+id/table"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content" >
+ 
+    </TableLayout>
+
+    </HorizontalScrollView>
+</ScrollView>
+
+
+</LinearLayout>
+

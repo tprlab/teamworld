@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+
+
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+     android:id="@+id/sch_span"
+     android:orientation="horizontal"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="10dp"
+     android:stretchColumns="1"
+     >
+
+       <Button
+            style="@style/bspinner"
+            android:id="@+id/sch_kind"
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:onClick="showKind"
+            />
+
+       <Spinner
+            android:id="@+id/spinner_kind"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+
+       <Button
+            style="@style/bspinner"
+            android:id="@+id/sch_div"
+            android:text="@string/whole_tour"
+            android:layout_height="50dp"
+            android:layout_width="150dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:layout_weight="1"
+            android:onClick="showDivs"
+            />
+
+
+       <Spinner
+            android:id="@+id/spinner_div"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            />
+    </LinearLayout>
+
+    <TextView style="@style/sepg1"/>
+
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+     android:id="@+id/sch_span"
+     android:orientation="horizontal"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="10dp"
+     >
+
+    <TextView style="@style/row" android:text="@string/have_games"
+        android:textStyle="italic"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/have_games"
+            android:clickable="true"
+            android:onClick="showGames"
+            android:drawableRight="@drawable/arrow_down_float"
+
+            />
+
+
+    <Button android:id="@+id/setdate"
+        android:text="@string/setdate"
+        style="@style/button"
+            android:height="50dp"
+           android:layout_width="wrap_content"
+            android:onClick="onSetDates"
+        />
+
+    </LinearLayout>
+
+    <TableLayout android:id="@+id/game_table" android:layout_width="fill_parent" android:layout_height="wrap_content" >
+    </TableLayout>
+
+    <TextView style="@style/sepg1"/>
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+     android:id="@+id/round_robin"
+     android:orientation="horizontal"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="10dp"
+     >
+
+       <Button
+            style="@style/bspinner"
+            android:id="@+id/sch_mode"
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:onClick="showModes"
+            android:layout_weight="1"
+            />
+
+       <Spinner
+            android:id="@+id/spinner_mode"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+
+        <EditText
+            android:id="@+id/rounds"
+            android:inputType="number"
+            style="@style/fedit"
+            android:text="1"
+            android:layout_width="60dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            />
+
+       <Button
+            style="@style/button"
+            android:id="@+id/do_rr"
+            android:text="@string/schedule"
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="right|center_vertical"
+            android:clickable="true"
+            android:onClick="onScheduleRR"
+            />
+
+    </LinearLayout>
+    <TextView style="@style/sepg1"/>
+
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+     android:id="@+id/play_off"
+     android:orientation="horizontal"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="10dp"
+     >
+
+       <Button
+            style="@style/bspinner"
+            android:id="@+id/stage"
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:onClick="showStages"
+            android:layout_weight="1"
+            />
+
+       <Spinner
+            android:id="@+id/spinner_stage"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+
+       <Button
+            style="@style/button"
+            android:id="@+id/do_poff"
+            android:text="@string/schedule"
+            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="right|center_vertical"
+            android:clickable="true"
+            android:onClick="onSchedulePlayOff"
+            />
+
+    </LinearLayout>
+    <TextView style="@style/sepg1"/>
+
+
+
+</LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ESportPlace</string>
+    <string name="start_tour">Start tournament</string>
+    <string name="history">History</string>
+    <string name="about">About</string>
+    <string name="quit">Quit</string>
+    <string name="tour_name">Tournament name</string>
+    <string name="team_name">Team name</string>
+    <string name="create">Create</string>
+    <string name="add_team">Add team</string>
+    <string name="start">Start</string>
+    <string name="tours">Tournaments</string>
+    <string name="rivals">Rivals</string>
+    <string name="go">Go</string>
+    <string name="team">Team</string>
+    <string name="wins">W</string>
+    <string name="losses">L</string>
+    <string name="ties">T</string>
+    <string name="points">P</string>
+    <string name="delete">Delete</string>
+    <string name="schedule">Schedule</string>
+    <string name="save">Save</string>
+    <string name="score_opt">Score(optional)</string>
+    <string name="score">Score</string>
+    <string name="refresh">Refresh</string>
+    <string name="set">Set</string>
+    <string name="rounds">Rounds</string>
+    <string name="change">Change</string>
+    <string name="settings">Settings</string>
+    <string name="home">Home</string>
+    <string name="same_team">The rivals must be different</string>
+    <string name="name">Name</string>
+    <string name="counting">Counting</string>
+    <string name="stage">Stage</string>
+    <string name="fin">Final</string>
+    <string name="fintour">Finish tournament</string>
+    <string name="deletetour">Cancel tournament</string>
+    <string name="no_score_set">Score is not set</string>
+    <string name="teamdel_confirm">Are you sure to remove team %1$s from the tournament?</string>
+    <string name="tourdel_confirm">Tournament will be cancelled and all related data will be deleted. Are you sure?</string>
+    <string name="divs">Divisions</string>
+    <string name="div_name">Division name</string>
+    <string name="div">Division</string>
+    <string name="name_empty">Name cannot be empty!</string>
+    <string name="cannot_save_team">Cannot save team</string>
+    <string name="cannot_create_div">Cannot create division</string>
+    <string name="cannot_add_tm_tr">Cannot add team to the tournament</string>
+    <string name="manage">Manage</string>
+    <string name="teams">Teams</string>
+    <string name="no_sel">Not selected</string>
+    <string name="save_divs">Save divisions</string>
+    <string name="active">Active</string>
+    <string name="sch_clr_confirm">Are you sure about clearing the schedule?</string>
+    <string name="clr_sch">Clear schedule</string>
+    <string name="clr">Clear</string>
+    <string name="games">Games</string>
+    <string name="tour">Tournament</string>
+    <string name="login">Sign In</string>
+    <string name="user_name">User name</string>
+    <string name="enter_name">Enter name</string>
+    <string name="leagues">Leagues</string>
+    <string name="league">League</string>
+    <string name="info">Info</string>
+    <string name="location">Location</string>
+    <string name="sport">Sport</string>
+    <string name="standings">Standings</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
+    <string name="W">W</string>
+    <string name="L">L</string>
+    <string name="G">G</string>
+    <string name="P">P</string>
+    <string name="Diff">Diff</string>
+    <string name="unex_err">Unexpected error happened</string>
+    <string name="info_saved">Information saved successfully</string>
+    <string name="name_min_len">The name must be at least 3 symbols</string>
+    <string name="lg_del_confirm">The league will be deleted permanently. Are you sure?</string>
+    <string name="create_div">Create division</string>
+    <string name="create_tm">Create team</string>
+    <string name="undiv">Undivisioned</string>
+    <string name="tm_del_confirm">The team will be deleted permanently. Are you sure?</string>
+    <string name="div_del_confirm">The division will be deleted permanently. Are you sure?</string>
+    <string name="no_div">No division</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="no_date">No date set</string>
+    <string name="no_time">No time set</string>
+    <string name="show_more">Show more...</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="search">Search</string>
+    <string name="save_score">Save score</string>
+    <string name="play_off">Play off</string>
+    <string name="tourfin_confirm">The tournament will be finished and games results cannot be changed. Are you sure?</string>
+    <string name="finish">Finish</string>
+    <string name="round_robin">Round robin</string>
+    <string name="every">Every</string>
+    <string name="starting">Start date</string>
+    <string name="sch_all">Schedule all</string>
+    <string name="setdate">Set up dates</string>
+    <string name="game_length_hint">Minutes</string>
+    <string name="game_length">Game length</string>
+    <string name="start_time">Start time</string>
+    <string name="day_of_week">Day of week</string>
+    <string name="select_day">Select day</string>
+    <string name="select_date">Select date</string>
+    <string name="select_time">Select time</string>
+    <string name="court_num">Parallel games</string>
+    <string name="court_num_hint">Games number</string>
+    <string name="whole_tour">Whole tournament</string>
+    <string name="have_games">Currently have %1$d games</string>
+    <string name="reset_dates">Reset dates</string>
+    <string name="unsch_games">Unscheduled games %1$d of %2$d</string>
+    <string name="game_length_empty">Game length is empty</string>
+    <string name="court_num_empty">Games number is empty</string>
+    <string name="end_time">End time</string>
+    <string name="qfin">Quarterfinal</string>
+    <string name="sfin">Semifinal</string>
+    <string name="round_of">Round of %1$d</string>
+
+    <string-array name="genders">
+        <item>Coed</item>
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+    <string-array name="schedules">
+        <item>Manual</item>
+        <item>Round robin</item>
+        <item>Elimination</item>
+    </string-array>
+
+</resources>

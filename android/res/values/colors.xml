@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ltgray">#FFECECEC</color>
+    <color name="gray">#FFD5D5D5</color>
+    <color name="darkgray">#FF686868</color>
+    <color name="green">#FF1C9752</color>
+    <color name="ltgreen">#FFCEE9DA</color>
+    <color name="white">#FFEEFFEE</color>
+    <color name="black">#FF000000</color>
+    <color name="bgcolor">#FFE6E6E6</color>
+    <color name="stripe_color">#FFA6D6A6</color>
+    <color name="red">#FFD9534F</color>
+    <color name="ltred">#FFA90101</color>
+    <color name="blue">#FF329FFF</color>
+    <color name="ltblue">#FF47A9FF</color>
+    <color name="darkblue">#FF0F1BFF</color>
+    <color name="bgray">#FFC9ECFF</color>
+    <color name="pink">#FFF8C4FF</color>
+</resources>

@@ -1,0 +1,55 @@
+<project name="pdas_test" default="build" basedir=".">
+
+<path id="main_path">
+    <pathelement path="."/>
+    <pathelement path="classes"/>
+    <fileset dir="lib">
+        <include name="*.jar"/>
+    </fileset>
+
+    <fileset dir="../lib">
+        <include name="*.jar"/>
+    </fileset>
+
+    <fileset dir="../entity/lib">
+        <include name="*.jar"/>
+    </fileset>
+
+    <fileset dir="../entity">
+        <include name="*.jar"/>
+    </fileset>
+
+    <fileset dir="../acl">
+        <include name="*.jar"/>
+    </fileset>
+
+    <fileset dir="../mail">
+        <include name="*.jar"/>
+    </fileset>
+
+    <fileset dir="../dbcore">
+        <include name="*.jar"/>
+    </fileset>
+
+
+
+
+    <fileset dir="../sport-core">
+        <include name="*.jar"/>
+    </fileset>
+
+
+
+</path>
+
+
+<target name="build">
+    <mkdir dir="classes"/>
+    <javac srcdir="src"  destdir="classes" debug="on">
+        <classpath refid="main_path"/>
+    </javac>
+    <jar basedir="classes" jarfile="sport-web.jar" />
+</target>
+
+
+</project>

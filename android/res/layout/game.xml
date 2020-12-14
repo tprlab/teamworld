@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/game_main"
+    >
+
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:id="@+id/table"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:padding="10dp" >
+
+
+    <TextView
+        android:id="@+id/team1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_weight="1" 
+        android:layout_centerVertical="true"
+        android:textSize="20sp"
+        android:padding="10dp"/>
+
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+       android:orientation="horizontal"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+       android:background="@drawable/border"
+       android:layout_gravity="right"
+       >
+
+
+         <Button android:id="@+id/inc1"
+             android:layout_width="wrap_content" android:layout_height="wrap_content"
+             android:text="+"
+             android:padding="10dp"
+            android:background="@drawable/half_lbutton"
+             />
+
+         <EditText
+             android:id="@+id/score1"
+             android:layout_width="100dp"
+             android:layout_height="wrap_content"
+             android:inputType="number"
+             style="@style/sqedit"
+            
+             />
+         <Button android:id="@+id/dec1"
+             android:layout_width="wrap_content" android:layout_height="wrap_content"
+             android:text="-"
+             android:padding="10dp"
+            android:background="@drawable/half_rbutton"
+             />
+    </LinearLayout>
+    </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/team2"
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" 
+        android:textSize="20sp"
+        android:layout_centerVertical="true"
+        android:padding="10dp"/>
+
+
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+       android:orientation="horizontal"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:background="@drawable/border"
+        android:layout_centerVertical="true"
+       android:layout_gravity="right"
+       >
+
+         <Button android:id="@+id/inc2"
+             android:layout_width="wrap_content" android:layout_height="wrap_content"
+             android:text="+"
+             android:padding="10dp"
+            android:background="@drawable/half_lbutton"
+             />
+
+        <EditText
+            android:id="@+id/score2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+             style="@style/sqedit"
+            />
+
+         <Button android:id="@+id/dec2"
+             android:layout_width="wrap_content" android:layout_height="wrap_content"
+             android:text="-"
+             android:padding="10dp"
+            android:background="@drawable/half_rbutton"
+             />
+    </LinearLayout>
+    </TableRow>
+    </TableLayout>
+
+    <View     android:layout_width="fill_parent"    android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <TableLayout 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+
+          <TextView
+              android:id="@+id/date"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content" 
+              android:layout_weight="1"
+              android:textSize="12dp"
+              android:padding="10dp"/>
+
+         <Button android:id="@+id/chdate"
+             android:layout_width="wrap_content" android:layout_height="wrap_content"
+             android:text="@string/change"
+             android:layout_gravity="left"
+             android:onClick="changeDate"
+             />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:padding="10dp" >
+
+
+          <TextView
+              android:id="@+id/time"
+              android:layout_width="fill_parent"
+              android:layout_weight="1"
+              android:layout_height="wrap_content" 
+              android:textSize="12dp"
+              android:padding="10dp"/>
+
+         <Button android:id="@+id/chtime"
+             android:layout_width="wrap_content" android:layout_height="wrap_content"
+             android:layout_gravity="left"
+             android:text="@string/change"
+             android:onClick="changeTime"
+             />
+
+        </TableRow>
+      </TableLayout>
+    <View     android:layout_width="fill_parent"    android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <Button android:id="@+id/save"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:text="@string/save"
+        style="@style/button"
+        android:onClick="onSaveGame"
+        android:layout_margin="10dp"
+        />
+
+</LinearLayout>
+
+
